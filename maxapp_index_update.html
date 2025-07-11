@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaxApp</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: white;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 2px solid #000;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .online-status {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+    .online-dot {
+      width: 20px;
+      height: 20px;
+      background: deeppink;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+    }
+    .search-bar input {
+      width: 80%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 50px;
+      border: 2px solid #000;
+    }
+    .apps-container {
+      padding: 20px;
+    }
+    .app-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .app-image {
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      margin-right: 20px;
+    }
+    .app-info h3 {
+      margin: 0;
+      background: red;
+      color: #000;
+      font-weight: bold;
+      padding: 4px;
+    }
+    .app-info a {
+      display: inline-block;
+      margin-top: 5px;
+      background: yellowgreen;
+      padding: 5px 10px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #eee;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #000;
+    }
+    footer div {
+      text-align: center;
+      font-weight: bold;
+    }
+    .theme-dark {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-btn" onclick="alert('Open menu')">&#9776;</div>
+    <div class="logo">MaxApp</div>
+    <div class="online-status">
+      Online
+      <div class="online-dot"></div>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search app" />
+  </div>
+
+  <div class="apps-container">
+    <div class="app-item">
+      <div class="app-image"></div>
+      <div class="app-info">
+        <h3>Biggest calculator</h3>
+        <a href="#">Use free online</a>
+      </div>
+    </div>
+    <!-- Future apps here -->
+  </div>
+
+  <footer>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/128/1946/1946433.png" width="24" /><br />Home
+    </div>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/128/482/482631.png" width="24" /><br />Search
+    </div>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/128/1828/1828919.png" width="24" /><br />other options
+    </div>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/128/3566/3566787.png" width="24" /><br />App use
+    </div>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/128/2917/2917997.png" width="24" /><br />theme change
+    </div>
+  </footer>
+</body>
+</html>
