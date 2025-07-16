@@ -3,116 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="keywords" content="MaxApp, playstore clone, app launcher, use free online, smart tools, calculator, chatfire, downloader, netcall"/>
   <title>MaxApp</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f2f2f2; }
-    header { background: #3f51b5; color: white; padding: 14px 20px; font-size: 22px; position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: bold; }
-    #searchBar { width: 95%; margin: 10px auto; padding: 10px; font-size: 16px; border: none; border-radius: 8px; display: block; }
-    .scroll-row { display: flex; overflow-x: auto; gap: 14px; padding: 10px; scroll-snap-type: x mandatory; }
-    .app-card { background: white; width: 120px; flex: 0 0 auto; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; scroll-snap-align: start; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .app-icon { font-size: 32px; background: #009688; color: white; width: 50px; height: 50px; border-radius: 50%; margin: auto; line-height: 50px; }
-    .app-name { font-size: 14px; margin-top: 8px; }
-    .main-view { display: flex; gap: 20px; padding: 20px; display: none; }
-    .main-view.active { display: flex; }
-    .main-left { width: 120px; text-align: center; }
-    .main-right { flex: 1; }
-    .main-right a { display: inline-block; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    .section-title { font-weight: bold; font-size: 18px; padding: 0 10px; }
-    .ad-slot { text-align: center; margin: 40px auto; }
-    footer { background: #222; color: #ccc; text-align: center; padding: 20px; font-size: 14px; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header><span class="logo">MaxApp</span></header>
-<input type="text" id="searchBar" placeholder="Search for apps..."/>
-
-<div class="section-title">Top Apps</div>
-<div class="scroll-row" id="topApps"></div>
-
-<div class="section-title">Recommended</div>
-<div class="scroll-row" id="moreApps"></div>
-
-<div class="main-view" id="appView">
-  <div class="main-left">
-    <div class="app-icon" id="viewIcon">C</div>
-    <div class="app-name" id="viewName">Calculator</div>
+  <header>MaxApp</header>
+  <input type="text" id="searchBar" placeholder="Search apps..."/>
+  <div class="categories">
+    <button>All</button><button>Tools</button><button>Media</button><button>AI</button><button>Storage</button>
   </div>
-  <div class="main-right">
-    <a id="viewLink" href="#" target="_blank">Use FREE</a>
+  <div class="app-grid" id="appGrid"></div>
+
+  <div class="detail-section" id="appDetail">
+    <div class="app-icon" id="detailIcon">C</div>
+    <h2 id="detailTitle">Calculator</h2>
+    <p class="stars">⭐⭐⭐⭐☆ (4.5)</p>
+    <p class="installs">100K+ installs</p>
+    <p id="detailFeature">A powerful calculator to solve math quickly.</p>
+    <a id="detailLink" class="use-btn" href="#" target="_blank">Use FREE</a>
   </div>
-</div>
 
-<div class="section-title">More Apps</div>
-<div class="scroll-row" id="bottomApps"></div>
+  <footer>
+    © 2025 MaxApp | Created by Pawan ♨️<br>
+    Contact: Smarttotalgame@gmail.com
+  </footer>
 
-<div class="ad-slot">
-  <script type="text/javascript">
-    atOptions = {
-      'key' : 'af9f1d0e36ef028f1a1b5b60c57ecc71',
-      'format' : 'iframe',
-      'height' : 250,
-      'width' : 300,
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/af9f1d0e36ef028f1a1b5b60c57ecc71/invoke.js"></script>
-</div>
+  <script>
+    const apps = [
+      { name: "Biggest Calculator", link: "https://maxapp69.github.io/Calculator/", feature: "A powerful calculator to solve math quickly.", installs: "100K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "Chatfire", link: "#", feature: "Chat securely with friends and family.", installs: "50K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "Netcall", link: "#", feature: "Internet-based calling app.", installs: "30K+", rating: "⭐⭐⭐☆☆" },
+      { name: "Convertlink", link: "#", feature: "Smart link converter.", installs: "10K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "FireAi", link: "#", feature: "AI-powered creativity tool.", installs: "20K+", rating: "⭐⭐⭐⭐⭐" },
+      { name: "Camera Effect", link: "#", feature: "Add filters to your photos.", installs: "40K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "Game Online", link: "#", feature: "Play multiplayer games online.", installs: "90K+", rating: "⭐⭐⭐☆☆" },
+      { name: "MaxTube", link: "#", feature: "Stream high-quality videos.", installs: "70K+", rating: "⭐⭐⭐⭐⭐" },
+      { name: "Convert8K Image & Video", link: "#", feature: "Convert media to 8K.", installs: "12K+", rating: "⭐⭐⭐☆☆" },
+      { name: "Link to Image", link: "#", feature: "Turn links into images.", installs: "8K+", rating: "⭐⭐⭐☆☆" },
+      { name: "Infinity Storage", link: "#", feature: "Unlimited cloud storage.", installs: "15K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "Save Notes", link: "#", feature: "Quick note taking app.", installs: "25K+", rating: "⭐⭐⭐☆☆" },
+      { name: "Text to Video", link: "#", feature: "Create video from text input.", installs: "18K+", rating: "⭐⭐⭐⭐☆" },
+      { name: "Text to Image", link: "#", feature: "Generate images from text using AI.", installs: "22K+", rating: "⭐⭐⭐⭐☆" }
+    ];
 
-<footer>
-  <p>© 2025 MaxApp | Created by Pawan ♨️</p>
-  <p>Contact: Smarttotalgame@gmail.com</p>
-</footer>
+    const grid = document.getElementById("appGrid");
+    const detail = document.getElementById("appDetail");
+    const detailIcon = document.getElementById("detailIcon");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailLink = document.getElementById("detailLink");
+    const detailFeature = document.getElementById("detailFeature");
+    const stars = document.querySelector(".stars");
+    const installs = document.querySelector(".installs");
 
-<script>
-  const apps = [
-    { name: "Calculator", link: "https://maxapp69.github.io/Calculator/" },
-    { name: "ChatFire", link: "#" },
-    { name: "NetCall", link: "#" },
-    { name: "ConvertLink", link: "#" },
-    { name: "Link Media", link: "#" },
-    { name: "Thumbnail Download", link: "#" },
-    { name: "Funny Face Camera", link: "#" },
-    { name: "Download Video", link: "#" },
-    { name: "Unlimited Storage", link: "#" },
-    { name: "FiteAI", link: "#" }
-  ];
-
-  const top = document.getElementById("topApps");
-  const more = document.getElementById("moreApps");
-  const bottom = document.getElementById("bottomApps");
-  const view = document.getElementById("appView");
-
-  function renderAppRow(container, start, end) {
-    for (let i = start; i < end; i++) {
-      const app = apps[i % apps.length];
-      const box = document.createElement("div");
-      box.className = "app-card";
-      box.innerHTML = `<div class="app-icon">${app.name[0]}</div><div class="app-name">${app.name}</div>`;
-      box.onclick = () => {
-        view.classList.add("active");
-        document.getElementById("viewIcon").innerText = app.name[0];
-        document.getElementById("viewName").innerText = app.name;
-        document.getElementById("viewLink").href = app.link;
+    apps.forEach((app, i) => {
+      const card = document.createElement("div");
+      card.className = "app-card";
+      card.innerHTML = `
+        <div class="app-icon">${app.name.charAt(0)}</div>
+        <div class="app-name">${app.name}</div>
+      `;
+      card.onclick = () => {
+        detail.classList.add("active");
+        detailIcon.innerText = app.name.charAt(0);
+        detailTitle.innerText = app.name;
+        detailLink.href = app.link;
+        detailFeature.innerText = app.feature;
+        stars.innerText = app.rating + " (" + (Math.random() * 2 + 3.5).toFixed(1) + ")";
+        installs.innerText = app.installs + " installs";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
       };
-      container.appendChild(box);
-    }
-  }
-
-  renderAppRow(top, 0, 5);
-  renderAppRow(more, 5, 10);
-  renderAppRow(bottom, 10, 15);
-
-  document.getElementById("searchBar").addEventListener("input", function () {
-    const val = this.value.toLowerCase();
-    document.querySelectorAll(".app-card").forEach(card => {
-      card.style.display = card.innerText.toLowerCase().includes(val) ? "block" : "none";
+      grid.appendChild(card);
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>

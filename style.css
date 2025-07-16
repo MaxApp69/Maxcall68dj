@@ -1,2 +1,104 @@
 
-/* Base fallback if needed */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #fff;
+}
+header {
+  background: #202124;
+  color: white;
+  padding: 14px 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#searchBar {
+  width: 94%;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  display: block;
+  background: #303134;
+  color: white;
+  border: none;
+}
+.categories {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+}
+.categories button {
+  background: #2c2c2c;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.app-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+.app-card {
+  width: 140px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.app-icon {
+  width: 60px;
+  height: 60px;
+  background: #3f51b5;
+  color: white;
+  font-size: 26px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+.app-name {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.detail-section {
+  display: none;
+  padding: 20px;
+  border-top: 1px solid #444;
+}
+.detail-section.active {
+  display: block;
+}
+.use-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #4CAF50;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+}
+.stars, .installs {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #aaa;
+}
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 14px;
+}
